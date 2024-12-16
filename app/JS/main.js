@@ -31,5 +31,21 @@ function shuffle(array) {
 }
 
 async function questiion() {
-  const data = getData();
+  try {  
+    const data = await getData();  
+    if (!data) {  
+     return null;
+    }else{
+      const x = data[Math.floor(Math.random() * data.length)]
+      const question = x.question;
+      console.log("Question:", question); 
+
+      const correctAnswer = x.correct_answer
+      const wrongAnswers = x.incorrect_answers
+      const choices = shuffle([correctAnswer, ...wrongAnswers]);
+      console.log("Choices:", choices); 
+    }
+  } catch (error) {
+      alert("No data found")
+  }
 }
