@@ -16,7 +16,7 @@ async function getData() {
       return data.results;
     }
   } catch (error) {
-    alert("hey  I could not find that agent");
+    alert("No data found");
   }
 }
 
@@ -44,8 +44,26 @@ async function questiion() {
       const wrongAnswers = x.incorrect_answers
       const choices = shuffle([correctAnswer, ...wrongAnswers]);
       console.log("Choices:", choices); 
+
+      const difficulty = x.difficulty
+      const category = x.category 
+      return {question, choices, correctAnswer, difficulty, category}
     }
   } catch (error) {
       alert("No data found")
+  }
+}
+
+async function category(){
+  try{
+    const data = await questiion();
+    if (!data){
+      return null;
+    }else{
+      const x = data.category;
+
+    }
+  }catch(error){
+    alert("No data found")
   }
 }
