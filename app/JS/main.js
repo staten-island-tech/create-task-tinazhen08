@@ -2,15 +2,12 @@ import "../css/style.css";
 
 async function getData() {
   try {
-    //returns a promise
     const response = await fetch(
       "https://opentdb.com/api.php?amount=50&type=multiple"
     );
-    //guard clause
     if (response.status != 200) {
       throw new Error(response);
     } else {
-      //convert promise to json
       const data = await response.json();
       console.log(data);
       return data.results;
@@ -61,7 +58,9 @@ async function category(){
       return null;
     }else{
       const x = data.category;
-
+      if (x === "Science & Nature"){
+        
+      }
     }
   }catch(error){
     alert("No data found")
