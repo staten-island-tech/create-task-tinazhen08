@@ -51,14 +51,13 @@ async function questiion() {
   }
 }
 
-async function category(){
+async function category(x){
   try{
     const data = await questiion();
     if (!data){
       return null;
     }else{
-      const x = data.category;
-      if (x === "Science & Nature"){
+      if (x.category === "Science & Nature"){
         
       }
     }
