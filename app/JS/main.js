@@ -1,9 +1,10 @@
 import "../css/style.css";
+import {generalKnowledge, books, film, music, musicalsAndTheatres, videoGames, scienceAndNature, computers} from "./trivia"
 
 async function getData() {
   try {
     const response = await fetch(
-      "https://opentdb.com/api.php?amount=50&type=multiple"
+      api
     );
     if (response.status != 200) {
       throw new Error(response);
