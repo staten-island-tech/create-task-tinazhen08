@@ -1,7 +1,43 @@
 import "../css/style.css";
 import {generalKnowledge, books, film, music, musicalsAndTheatres, videoGames, scienceAndNature, computers} from "./trivia"
+import { DOMSelector } from "./dom";
 
-async function getData() {
+const listAPI = [generalKnowledge, books, film, music, musicalsAndTheatres, videoGames, scienceAndNature, computers]
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+function getCategories(x){
+  const c = shuffle(x);
+  const C1 = c[0];
+  const C2 = c[1];
+  const C3 = c[2];
+  const C4 = c[3];
+  const C5 = c[4];
+  const C6 = c[5];
+  return {C1, C2, C3, C4, C5, C6}
+}
+
+function displayCategories(){
+  const categories = getCategories(listAPI);
+  for (let i = 0; i < categories.length; i++) {
+    DOMSelector.container.insertAdjacentHTML(
+      "beforeend", 
+      `<div class="${categories[i].results.category}">${categories[i].results.category}</div>`
+    )
+  }
+  return categories
+}
+
+function questionDiff(){
+
+}
+/* async function getData() {
   try {
     const response = await fetch(
       api
@@ -18,17 +54,9 @@ async function getData() {
   }
 }
 
-getData();
+getData(); */
 
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
-
-async function questiion() {
+/* async function questiion() {
   try {  
     const data = await getData();  
     if (!data) {  
@@ -65,4 +93,4 @@ async function category(x){
   }catch(error){
     alert("No data found")
   }
-}
+} */
