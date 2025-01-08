@@ -23,19 +23,38 @@ function getCategories(x){
   return {C1, C2, C3, C4, C5, C6}
 }
 
+const game = getCategories(listAPI)
+
 function displayCategories(){
-  const categories = getCategories(listAPI);
+  const categories = game;
   for (let i = 0; i < categories.length; i++) {
     DOMSelector.container.insertAdjacentHTML(
       "beforeend", 
       `<div class="${categories[i].results.category}">${categories[i].results.category}</div>`
     )
   }
-  return categories
 }
 
 function questionDiff(){
-
+  const q = game;
+  for (let i = 0; i < q.length; i++) {
+    for (let j = 0; j < q[i].results.length; i++){
+      if (q[i][j].difficulty === "easy"){
+        const e = [];
+        const x = e.push(q[i][j].question);
+        console.log(`Number of easy "${q[i].results.category}" questions is: ${x}`)
+      }else if (q[i][j].difficulty === "medium"){
+        const m = [];
+        const y = m.push(q[i][j].question);
+        console.log(`Number of easy "${q[i].results.category}" questions is: ${y}`)
+      }else{
+        const h = [];
+        const z = h.push(q[i][j].question);
+        console.log(`Number of easy "${q[i].results.category}" questions is: ${z}`)
+      }
+    }
+  }
+  return {e, m, h}
 }
 /* async function getData() {
   try {
