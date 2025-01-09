@@ -28,11 +28,26 @@ const game = getCategories(listAPI)
 function displayCategories(){
   const categories = game;
   DOMSelector.container.innerHTML = "";
-  for (let i = 0; i < categories.length; i++) {
+
+  for (let i = 0; i < Object.keys(categories).length; i++){
+    const categoriesKey = Object.keys(categories)[i]
+    const category = categories[categoriesKey];
     DOMSelector.container.insertAdjacentHTML(
       "beforeend", 
-      `<div class="${categories[i].results.category}">${categories[i].results.category}</div>`
+      `<h3 class="${category}">${category}</h3>
+      <div class="question-grid"></div>`
     )
+  }
+
+  const questionGrid = DOMSelector.questionGrid;
+
+  DOMSelector.questionGrid.insertAdjacentHTML("beforeend", `<button class="question-btn"></button>`) 
+
+  for (let j = 0; j < 5; j++){
+    const points = (j+1) * 100;
+    const questionBtn = DOMSelector.questionBtn;
+    questionBtn.dataset.category = category.results[0].category;
+    questionBtn.
   }
 }
 
