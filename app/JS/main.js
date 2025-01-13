@@ -1,8 +1,8 @@
 import "../css/style.css";
-import {generalKnowledge, books, film, music, videoGames, scienceAndNature, computers} from "./trivia"
+import {generalKnowledge, books, film, music, videoGames, computers, mythology, television, boardGames, mathematics} from "./trivia"
 import { DOMSelector } from "./dom";
 
-const listAPI = [generalKnowledge, books, film, music, videoGames, scienceAndNature, computers]
+const listAPI = [generalKnowledge, books, film, music, videoGames, computers, mythology, television, boardGames, mathematics]
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -111,7 +111,7 @@ function showQuestion(event) {
 
     const gambleBtn = document.querySelector("#gamble-btn");
     const gambleModal = document.querySelector(".gamble-modal")
-    gambleBtn.addEventListener("click", function(){
+    gambleBtn.addEventListener("click", async () => {
       console.log("Gamble button clicked");
       let gambleAmount = Number(document.querySelector("#gamble-amount").value);
       if (isNaN(gambleAmount) || gambleAmount < 0) {

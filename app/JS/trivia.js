@@ -982,191 +982,6 @@ const videoGames = {
   ]
 };
 
-const scienceAndNature = {
-  "results": [
-    {
-      "type": "multiple",
-      "difficulty": "easy",
-      "category": "Science &amp; Nature",
-      "question": "What is the speed of light in a vacuum?",
-      "correct_answer": "299,792,458 m/s",
-      "incorrect_answers": [
-        "50,461 m/s",
-        "308,215,043 m/s",
-        "751,665,014,151 m/s"
-      ]
-    },
-    {
-      "type": "multiple",
-      "difficulty": "easy",
-      "category": "Science &amp; Nature",
-      "question": "What is the official name of the star located closest to the North Celestial Pole?",
-      "correct_answer": "Polaris",
-      "incorrect_answers": [
-        "Eridanus",
-        "Gamma Cephei",
-        "Iota Cephei"
-      ]
-    },
-    {
-      "type": "multiple",
-      "difficulty": "easy",
-      "category": "Science &amp; Nature",
-      "question": "Which gas forms about 78% of the Earth&rsquo;s atmosphere?",
-      "correct_answer": "Nitrogen",
-      "incorrect_answers": [
-        "Oxygen",
-        "Argon",
-        "Carbon Dioxide"
-      ]
-    },
-    {
-      "type": "multiple",
-      "difficulty": "easy",
-      "category": "Science &amp; Nature",
-      "question": "Who is the chemical element Curium named after?",
-      "correct_answer": "Marie &amp; Pierre Curie",
-      "incorrect_answers": [
-        "The Curiosity Rover",
-        "Curious George",
-        "Stephen Curry"
-      ]
-    },
-    {
-      "type": "multiple",
-      "difficulty": "easy",
-      "category": "Science &amp; Nature",
-      "question": "Dry ice is the solid form of what substance?",
-      "correct_answer": "Carbon dioxide",
-      "incorrect_answers": [
-        "Nitrogen",
-        "Ammonia",
-        "Oxygen"
-      ]
-    },
-    {
-      "type": "multiple",
-      "difficulty": "medium",
-      "category": "Science &amp; Nature",
-      "question": "What is Hypernatremia?",
-      "correct_answer": "Increase in blood sodium",
-      "incorrect_answers": [
-        "Decrease in blood potassium",
-        "Increase in blood glucose",
-        "Decrease in blood iron"
-      ]
-    },
-    {
-      "type": "multiple",
-      "difficulty": "medium",
-      "category": "Science &amp; Nature",
-      "question": "What is the scientific term for &#039;taste&#039;?",
-      "correct_answer": "Gustatory Perception",
-      "incorrect_answers": [
-        "Olfaction",
-        "Somatosensation",
-        "Auditory Perception"
-      ]
-    },
-    {
-      "type": "multiple",
-      "difficulty": "medium",
-      "category": "Science &amp; Nature",
-      "question": "Which psychological term refers to the stress of holding contrasting beliefs?",
-      "correct_answer": "Cognitive Dissonance",
-      "incorrect_answers": [
-        "Flip-Flop Syndrome",
-        "Split-Brain",
-        "Blind Sight"
-      ]
-    },
-    {
-      "type": "multiple",
-      "difficulty": "medium",
-      "category": "Science &amp; Nature",
-      "question": "The Sun consists of mostly which two elements?",
-      "correct_answer": "Hydrogen &amp; Helium",
-      "incorrect_answers": [
-        "Hydrogen &amp; Nitrogen",
-        "Carbon &amp; Nitrogen",
-        "Carbon &amp; Helium"
-      ]
-    },
-    {
-      "type": "multiple",
-      "difficulty": "medium",
-      "category": "Science &amp; Nature",
-      "question": "When was the first mammal successfully cloned?",
-      "correct_answer": "1996",
-      "incorrect_answers": [
-        "2009",
-        "1999",
-        "1985"
-      ]
-    },
-    {
-      "type": "multiple",
-      "difficulty": "hard",
-      "category": "Science &amp; Nature",
-      "question": "What is &quot;Stenoma&quot;?",
-      "correct_answer": "A genus of moths",
-      "incorrect_answers": [
-        "A combat stimulant from WW2",
-        "A type of seasoning",
-        "A port city in the carribean"
-      ]
-    },
-    {
-      "type": "multiple",
-      "difficulty": "hard",
-      "category": "Science &amp; Nature",
-      "question": "An organic compound is considered an alcohol if it has what functional group?",
-      "correct_answer": "Hydroxyl",
-      "incorrect_answers": [
-        "Carbonyl",
-        "Alkyl",
-        "Aldehyde"
-      ]
-    },
-    {
-      "type": "multiple",
-      "difficulty": "hard",
-      "category": "Science &amp; Nature",
-      "question": "Which of these is a stop codon in DNA?",
-      "correct_answer": "TAA",
-      "incorrect_answers": [
-        "ACT",
-        "ACA",
-        "GTA"
-      ]
-    },
-    {
-      "type": "multiple",
-      "difficulty": "hard",
-      "category": "Science &amp; Nature",
-      "question": "Which is the chemical name of H2O?",
-      "correct_answer": "Dihydrogen Monoxide",
-      "incorrect_answers": [
-        "Ammonium chloride",
-        "Anhydrous Sodium Carbonate",
-        "Manganese dioxide"
-      ]
-    },
-    {
-      "type": "multiple",
-      "difficulty": "hard",
-      "category": "Science &amp; Nature",
-      "question": "Which of the following is NOT a word used to describe an earthquake?",
-      "correct_answer": "Drop-slide",
-      "incorrect_answers": [
-        "Foreshock",
-        "Strike-slip",
-        "Temblor"
-      ]
-    }
-  ]
-};
-
 const computers = {
   "results": [
     {
@@ -1352,4 +1167,744 @@ const computers = {
   ]
 };
 
-export {generalKnowledge, books, film, music, videoGames, scienceAndNature, computers};
+const mythology = {
+  "results": [
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Mythology",
+      "question": "This Greek goddess&#039;s name was chosen for the dwarf planet responsible for discord on Pluto&#039;s classification amongst astronomers.",
+      "correct_answer": "Eris",
+      "incorrect_answers": [
+        "Charon",
+        "Ceres",
+        "Dysnomia"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Mythology",
+      "question": "The ancient Roman god of war was commonly known as which of the following?",
+      "correct_answer": "Mars",
+      "incorrect_answers": [
+        "Jupiter",
+        "Juno",
+        "Ares"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Mythology",
+      "question": "Who was the King of Gods in Ancient Greek mythology?",
+      "correct_answer": "Zeus",
+      "incorrect_answers": [
+        "Apollo",
+        "Hermes",
+        "Poseidon"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Mythology",
+      "question": "In most traditions, who was the wife of Zeus?",
+      "correct_answer": "Hera",
+      "incorrect_answers": [
+        "Aphrodite",
+        "Athena",
+        "Hestia"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Mythology",
+      "question": "Which of these mythological creatures is said to be half-man and half-horse?",
+      "correct_answer": "Centaur",
+      "incorrect_answers": [
+        "Minotaur",
+        "Pegasus",
+        "Gorgon"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Mythology",
+      "question": "Which of the following is not one of the Greek Fates?",
+      "correct_answer": "Narcissus",
+      "incorrect_answers": [
+        "Clotho",
+        "Atropos",
+        "Lachesis"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Mythology",
+      "question": "The Norse god Odin has two pet crows named &quot;Huginn&quot; and &quot;Muninn&quot;.  What do their names mean?",
+      "correct_answer": "Thought &amp; Memory",
+      "incorrect_answers": [
+        "Power &amp; Peace",
+        "War &amp; Learning",
+        "Sleeping &amp; Waking"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Mythology",
+      "question": "What is the name of the Greek god of blacksmiths?",
+      "correct_answer": "Hephaestus",
+      "incorrect_answers": [
+        "Dyntos",
+        "Vulcan",
+        "Artagatus"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Mythology",
+      "question": "Neptune&#039;s greek name was...",
+      "correct_answer": "Poseidon",
+      "incorrect_answers": [
+        "Ares",
+        "Zeus",
+        "Apollo"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Mythology",
+      "question": "A minotaur is half human half what?",
+      "correct_answer": "Bull",
+      "incorrect_answers": [
+        "Cow",
+        "Horse",
+        "Eagle"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Mythology",
+      "question": "According to Algonquian folklore, how does one transform into a Wendigo?",
+      "correct_answer": "Participating in cannibalism.",
+      "incorrect_answers": [
+        "Excessive mutilation of animal corpses.",
+        "Performing a ritual involving murder.",
+        "Drinking the blood of many slain animals."
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Mythology",
+      "question": "Talos, the mythical giant bronze man, was the protector of which island?",
+      "correct_answer": "Crete",
+      "incorrect_answers": [
+        "Sardinia",
+        "Sicily",
+        "Cyprus"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Mythology",
+      "question": "What immense structure is referred to in Norse Mythology as the Yggdrasil.",
+      "correct_answer": "Tree",
+      "incorrect_answers": [
+        "Mountain",
+        "Temple",
+        "Castle"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Mythology",
+      "question": "In Norse mythology, what is the name of the serpent which eats the roots of the ash tree Yggdrasil?",
+      "correct_answer": "Nidhogg",
+      "incorrect_answers": [
+        "Bragi",
+        "Odin",
+        "Ymir"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Mythology",
+      "question": "Who is a minor god that is protector and creator of various arts, such as cheese making and bee keeping.",
+      "correct_answer": "Aristaeus",
+      "incorrect_answers": [
+        "Autonoe",
+        "Carme",
+        "Cephisso"
+      ]
+    }
+  ]
+};
+
+const television = {
+  "results": [
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Television",
+      "question": "In the Star Trek universe, what color is Vulcan blood?",
+      "correct_answer": "Green",
+      "incorrect_answers": [
+        "Blue",
+        "Red",
+        "Purple"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Television",
+      "question": "In &quot;Star Trek: Voyager&quot;, which episode did Voyager establish real-time communication with Starfleet Headquarters?",
+      "correct_answer": "Pathfinder",
+      "incorrect_answers": [
+        "Message In A Bottle",
+        "Someone To Watch Over Me",
+        "Counterpoint"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Television",
+      "question": "Which actor portrays &quot;Walter White&quot; in the series &quot;Breaking Bad&quot;?",
+      "correct_answer": " Bryan Cranston",
+      "incorrect_answers": [
+        "Andrew Lincoln",
+        "Aaron Paul",
+        "RJ Mitte"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Television",
+      "question": "In the show &quot;Tengen Toppa Gurren Lagann&quot; what is the name of the character who force everyone to live underground?",
+      "correct_answer": "Lordgenome",
+      "incorrect_answers": [
+        "Kingloname",
+        "Lord Genome",
+        "King Loname"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Television",
+      "question": "In &quot;Breaking Bad&quot;, Walter White is a high school teacher diagnosed with which form of cancer?",
+      "correct_answer": "Lung Cancer",
+      "incorrect_answers": [
+        "Prostate Cancer",
+        "Brain Cancer",
+        "Testicular Cancer"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Television",
+      "question": "What is Meg&#039;s full name in &quot;Family Guy&quot;?",
+      "correct_answer": "Megatron Griffin",
+      "incorrect_answers": [
+        "Who-Cares Griffin",
+        "Neil Griffin",
+        "Megan Griffin"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Television",
+      "question": "Which of the following Autobot names in Michael Bay&#039;s movies was NOT a name for a Transformer in the original 1980&#039;s cartoon?",
+      "correct_answer": "Mudflap",
+      "incorrect_answers": [
+        "Skids",
+        "Sideswipe",
+        "Ratchet"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Television",
+      "question": "What is the setting of the show &quot;Parks and Recreation&quot;?",
+      "correct_answer": "Pawnee, Indiana",
+      "incorrect_answers": [
+        "Eagleton, Indiana",
+        "Pasadena, California",
+        "London, England"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Television",
+      "question": "What is the title of The Allman Brothers Band instrumental used as the theme to the BBC motoring show, &#039;Top Gear&#039;?",
+      "correct_answer": "Jessica",
+      "incorrect_answers": [
+        "Angela",
+        "Erica",
+        "Sandra"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Television",
+      "question": "In the Netflix show, Stranger Things, what song would Will sing to himself as he was missing?",
+      "correct_answer": "Should I Stay or Should I Go?",
+      "incorrect_answers": [
+        "Love Will Tear Us Apart",
+        "This Charming Man",
+        "Africa"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Television",
+      "question": "Which of these voices wasn&#039;t a choice for the House AI in &quot;The Simpsons Treehouse of Horror&quot; short, House of Whacks?",
+      "correct_answer": "George Clooney",
+      "incorrect_answers": [
+        "Matthew Perry",
+        "Dennis Miller",
+        "Pierce Brosnan"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Television",
+      "question": "In &quot;Donkey Kong Country&quot;, why does Donkey Kong want to know the secret of the crystal coconut?",
+      "correct_answer": "He&#039;s the big kahuna.",
+      "incorrect_answers": [
+        "To find out where all the bananas are.",
+        "Because Diddy Kong forced him.",
+        "He wants to punish brutes."
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Television",
+      "question": "In Star Trek, what is the name of Spock&#039;s father?",
+      "correct_answer": "Sarek",
+      "incorrect_answers": [
+        "Tuvok",
+        "T&#039;Pal",
+        "Surak"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Television",
+      "question": "Which country does the YouTuber &quot;SinowBeats&quot; originate from?",
+      "correct_answer": "Scotland",
+      "incorrect_answers": [
+        "England",
+        "Sweden",
+        "Germany"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Television",
+      "question": "In season one of the US Kitchen Nightmares, Gordan Ramsay tried to save 10 different restaurants. How many ended up closing afterwards?",
+      "correct_answer": "9",
+      "incorrect_answers": [
+        "6",
+        "3",
+        "0"
+      ]
+    }
+  ]
+};
+
+const boardGames = {
+  "results": [
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Board Games",
+      "question": "When was the board game Twister, released to the public?",
+      "correct_answer": "April 1966",
+      "incorrect_answers": [
+        "September 1965",
+        "January 1969",
+        "February 1966"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Board Games",
+      "question": "How many pieces are there on the board at the start of a game of chess?",
+      "correct_answer": "32",
+      "incorrect_answers": [
+        "16",
+        "20",
+        "36"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Board Games",
+      "question": "In board games, an additional or ammended rule that applies to a certain group or place is informally known as a &quot;what&quot; rule?",
+      "correct_answer": "House",
+      "incorrect_answers": [
+        "Custom",
+        "Extra",
+        "Change"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Board Games",
+      "question": "How many dice are used in the game of Yahtzee?",
+      "correct_answer": "Five",
+      "incorrect_answers": [
+        "Four",
+        "Six",
+        "Eight"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Board Games",
+      "question": "The board game Monopoly takes its street names from which real American city?",
+      "correct_answer": "Atlantic City, New Jersey",
+      "incorrect_answers": [
+        "Las Vegas, Nevada",
+        "Duluth, Minnesota",
+        "Charleston, South Carolina"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Board Games",
+      "question": "Europa Universalis is a strategy video game based on which French board game?",
+      "correct_answer": "Europa Universalis",
+      "incorrect_answers": [
+        "Europe and the Universe",
+        "Europa!",
+        "Power in Europe"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Board Games",
+      "question": "How many points is the Z tile worth in Scrabble?",
+      "correct_answer": "10",
+      "incorrect_answers": [
+        "8",
+        "5",
+        "6"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Board Games",
+      "question": "At the start of a standard game of the Monopoly, if you throw a double six, which square would you land on?",
+      "correct_answer": "Electric Company",
+      "incorrect_answers": [
+        "Water Works",
+        "Chance",
+        "Community Chest"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Board Games",
+      "question": "In what year was the card game Magic: the Gathering first introduced?",
+      "correct_answer": "1993",
+      "incorrect_answers": [
+        "1987",
+        "1998",
+        "2003"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Board Games",
+      "question": "In &quot;Magic: The Gathering&quot;, what instant card has the highest converted mana cost?",
+      "correct_answer": "Blinkmoth Infusion",
+      "incorrect_answers": [
+        "Vitalizing Wind",
+        " Chant of Vitu-Ghazi",
+        "Assert Authority"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Board Games",
+      "question": "On a standard Monopoly board, how much do you have to pay for Tennessee Ave?",
+      "correct_answer": "$180",
+      "incorrect_answers": [
+        "$200",
+        "$160",
+        "$220"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Board Games",
+      "question": "What was the development code name for the &quot;Urza&#039;s Destiny&quot; expansion for &quot;Magic: The Gathering&quot;, released in 1999?",
+      "correct_answer": "Chimichanga",
+      "incorrect_answers": [
+        "Burrito",
+        "Taquito",
+        "Enchilada"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Board Games",
+      "question": "How many rooms are there, not including the hallways and the set of stairs, in the board game &quot;Clue&quot;?",
+      "correct_answer": "9",
+      "incorrect_answers": [
+        "1",
+        "6",
+        "10"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Board Games",
+      "question": "What is the most challenging monster in the Dungeons &amp; Dragons 5th Edition Monster Manual?",
+      "correct_answer": "Tarrasque",
+      "incorrect_answers": [
+        "Beholder",
+        "Displacer Beast",
+        "Lich"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Board Games",
+      "question": "In standard Monopoly, what&#039;s the rent if you land on Park Place with no houses?",
+      "correct_answer": "$35",
+      "incorrect_answers": [
+        "$30",
+        "$50",
+        "$45"
+      ]
+    }
+  ]
+};
+
+const mathematics = {
+  "results": [
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Science: Mathematics",
+      "question": "What prime number comes next after 19?",
+      "correct_answer": "23",
+      "incorrect_answers": [
+        "25",
+        "21",
+        "27"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Science: Mathematics",
+      "question": "How many sides does a heptagon have?",
+      "correct_answer": "7",
+      "incorrect_answers": [
+        "8",
+        "6",
+        "5"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Science: Mathematics",
+      "question": "In Roman Numerals, what does XL equate to?",
+      "correct_answer": "40",
+      "incorrect_answers": [
+        "60",
+        "15",
+        "90"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Science: Mathematics",
+      "question": "What is the symbol for Displacement?",
+      "correct_answer": "&Delta;r",
+      "incorrect_answers": [
+        "dr",
+        "Dp",
+        "r"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Science: Mathematics",
+      "question": "How many sides does a trapezium have?",
+      "correct_answer": "4",
+      "incorrect_answers": [
+        "3",
+        "5",
+        "6"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Science: Mathematics",
+      "question": "To the nearest whole number, how many radians are in a whole circle?",
+      "correct_answer": "6",
+      "incorrect_answers": [
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Science: Mathematics",
+      "question": "What Greek letter is used to signify summation?",
+      "correct_answer": "Sigma",
+      "incorrect_answers": [
+        "Delta",
+        "Alpha",
+        "Omega"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Science: Mathematics",
+      "question": "What is the first Mersenne prime exponent over 1000?",
+      "correct_answer": "1279",
+      "incorrect_answers": [
+        "2203",
+        "1009",
+        "1069"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Science: Mathematics",
+      "question": "What shape does sin(x) or cos(x) make on a graph?",
+      "correct_answer": "Waves",
+      "incorrect_answers": [
+        "A Parabola",
+        "A Straight Line",
+        "Zig-Zags"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Science: Mathematics",
+      "question": "What is the Roman numeral for 500?",
+      "correct_answer": "D",
+      "incorrect_answers": [
+        "L",
+        "C",
+        "X"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Science: Mathematics",
+      "question": "What is the fourth digit of &pi;?",
+      "correct_answer": "1",
+      "incorrect_answers": [
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Science: Mathematics",
+      "question": "Which of the following mathematicians made major contributions to game theory?",
+      "correct_answer": "John Von Neumann",
+      "incorrect_answers": [
+        "Carl Friedrich Gauss",
+        "Leonhard Euler",
+        "Stefan Banach"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Science: Mathematics",
+      "question": "What is the smallest number that can be expressed as the sum of two positive cubes in two different ways?",
+      "correct_answer": "1729",
+      "incorrect_answers": [
+        "91",
+        "561",
+        "4104"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Science: Mathematics",
+      "question": "Which of the following famous mathematicians died in a duel at the age of 20?",
+      "correct_answer": "Galois",
+      "incorrect_answers": [
+        "Abel",
+        "Euler",
+        "Gauss"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Science: Mathematics",
+      "question": "What is the plane curve proposed by Descartes to challenge Fermat&#039;s extremum-finding techniques called?",
+      "correct_answer": "Folium of Descartes",
+      "incorrect_answers": [
+        "Elliptic Paraboloid of Descartes",
+        "Cartesian Coordinates",
+        "Descarte&#039;s Helicoid"
+      ]
+    }
+  ]
+}
+
+export {generalKnowledge, books, film, music, videoGames, computers, mythology, television, boardGames, mathematics};
