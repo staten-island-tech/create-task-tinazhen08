@@ -7,6 +7,20 @@ body,
   margin: 0;
 }
 
+:root{
+  --dark-blue:#1d3557;
+  --teal-blue: #457b9d;
+  --light-blue: #a8dadc;
+  --white: #ffffff;
+  --black: #000000; 
+
+  --primary: var(--dark-blue);
+  --secondary: var(--teal-blue);
+  --tertiary: var(--light-blue); 
+  --font-color: var(--white);
+  --shadow: var(--black); 
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -23,8 +37,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 6rem;
-  background-color: #457b9d;
-  color: white;
+  background-color: var(--secondary);
+  color: var(--font-color);
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -33,7 +47,7 @@ body {
 }
 
 .start:hover{
-  background-color: #1d3557;;
+  background-color: var(--primary);
 }
 
 .score {
@@ -56,8 +70,8 @@ body {
 }
 
 .category h2 {
-  background-color: #1d3557;
-  color: white;
+  background-color: var(--primary);
+  color: var(--font-color);
   padding: 1rem;
   margin: 0;
   font-size: 1.8rem;
@@ -72,8 +86,8 @@ body {
 }
 
 .question-btn {
-  background-color: #457b9d;
-  color: white;
+  background-color: var(--secondary);
+  color: var(--font-color);
   border: none;
   padding: 1.5rem;
   font-size: 1.8rem;
@@ -84,11 +98,11 @@ body {
 }
 
 .question-btn:hover {
-  background-color: #1d3557;
+  background-color: var(--primary);
 }
 
 .question-btn:disabled {
-  background-color: #a8dadc;
+  background-color: var(--tertiary);
 }
 
 .question-modal {
@@ -96,7 +110,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background-color: var(--font-color);
   border-radius: 1rem;
   padding: 2rem;
   box-shadow: 0 4px 6px black;
@@ -115,8 +129,8 @@ body {
 }
 
 .answer-btn {
-  background-color: #457b9d;
-  color: white;
+  background-color: var(--secondary);
+  color: var(--font-color);
   border: none;
   padding: 1rem 2rem;
   font-size: 1.6rem;
@@ -130,8 +144,8 @@ body {
 }
 
 .close-modal-btn {
-  background-color: #457b9d;
-  color: white;
+  background-color: var(--secondary);
+  color: var(--font-color);
   border: none;
   padding: 1rem 2rem;
   margin-top: 2rem;
@@ -149,7 +163,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background-color: var(--font-color);
   border-radius: 1rem;
   padding: 2rem;
   box-shadow: 0 4px 6px black;
@@ -167,8 +181,8 @@ body {
 }
 
 .wager-modal button {
-  background-color: #457b9d;
-  color: white;
+  background-color: var(--secondary);
+  color: var(--font-color);
   border: none;
   padding: 1rem 2rem;
   font-size: 1.8rem;
@@ -177,5 +191,6 @@ body {
 }
 
 .wager-modal button:hover {
-  background-color: #1d3557;
+  background-color: var(--primary);
 }
+
