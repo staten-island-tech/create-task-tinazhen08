@@ -1,5 +1,4 @@
 import "../css/style.css";
-import { generalKnowledge } from "./trivia/gk";
 import { books } from "./trivia/book";
 import { boardGames } from "./trivia/bg";
 import { computers } from "./trivia/computer";
