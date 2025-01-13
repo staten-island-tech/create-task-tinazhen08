@@ -1,12 +1,5 @@
 import "../css/style.css";
-import { books } from "./trivia/book";
-import { computers } from "./trivia/computer";
-import { generalKnowledge } from "./trivia/gk";
-import { mathematics } from "./trivia/math";
-import { music } from "./trivia/music";
-import { mythology } from "./trivia/myth";
-import { television } from "./trivia/tele";
-import { videoGames } from "./trivia/vg"; 
+import {books, computers, generalKnowledge, mathematics, music, mythology, television, videoGames} from "./trivia"
 import { DOMSelector } from "./dom";
 
 const listAPI = [
