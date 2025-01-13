@@ -1,8 +1,8 @@
 import "../css/style.css";
-import {generalKnowledge, books, film, music, musicalsAndTheatres, videoGames, scienceAndNature, computers} from "./trivia"
+import {generalKnowledge, books, film, music, videoGames, scienceAndNature, computers} from "./trivia"
 import { DOMSelector } from "./dom";
 
-const listAPI = [generalKnowledge, books, film, music, musicalsAndTheatres, videoGames, scienceAndNature, computers]
+const listAPI = [generalKnowledge, books, film, music, videoGames, scienceAndNature, computers]
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -55,9 +55,17 @@ function displayCategories(){
   questionBtns.forEach((button) => {
     button.addEventListener("click", showQuestion);
   });
+
+  const dailyDoubleBtns = [];
+  for (let i = 0; i < questionBtns.length; i++) {
+    if (Math.random() < 0.1 && dailyDoubleBtns.length < 2) {
+      dailyDoubleBtns.push(questionBtns[i]);
+      questionBtns[i].classList.add("daily-double");
+    }
+  }
 };
 
-function showQuestion(event){
+function showQuestion(event) {
   const category = event.target.dataset.category;
   const points = Number(event.target.dataset.points);
   const index = Number(event.target.dataset.index);
@@ -68,53 +76,111 @@ function showQuestion(event){
 
   event.target.dataset.chosen = "true";
 
+  const questionBtns = document.querySelectorAll(".question-btn");
+  questionBtns.forEach((btn) => btn.disabled = true);
+
+  const existingModal = document.querySelector(".question-modal");
+  if (existingModal) {
+    existingModal.remove();
+  }
+
   const questionData = getQuestionData(category, index);
   if (!questionData) {
     console.error(`No question data found for category: ${category} and index: ${index}`);
-    return;  
+    event.target.dataset.chosen = "false";
+    questionBtns.forEach((btn) => btn.disabled = false);
+    alert("Error displaying question. Please try again!")
+    return;
   }
 
   const question = questionData.question;
   const correctAnswer = questionData.correct_answer;
-  const incorrectAnswers = shuffle([...questionData.incorrect_answers])
+  const incorrectAnswers = questionData.incorrect_answers;
 
-  let selectedQuestion = question;
-  console.log(selectedQuestion);
+  const allAnswers = [correctAnswer, ...incorrectAnswers];
+  const shuffledAnswers = shuffle(allAnswers);
 
+  let gambleAmount = 0;
+  if (event.target.classList.contains("daily-double")) {
+    DOMSelector.container.insertAdjacentHTML("beforeend", `<div class="gamble-modal">
+      <h2>Daily Double</h2>
+      <p>How much would you like to gamble?</p>
+      <input type="number" id="gamble-amount" value="0" max="${currentScore}">
+      <button id="gamble-btn">Gamble</button>
+    </div>`)
+
+    const gambleBtn = document.querySelector("#gamble-btn");
+    const gambleModal = document.querySelector(".gamble-modal")
+    gambleBtn.addEventListener("click", function(){
+      console.log("Gamble button clicked");
+      let gambleAmount = Number(document.querySelector("#gamble-amount").value);
+      if (isNaN(gambleAmount) || gambleAmount < 0) {
+        alert("Please enter a valid positive number to gamble.");
+        return;
+      }
+
+      if (currentScore < 0){
+        alert("You have a negative amount of points. You are too poor to gamble!")
+        return gambleAmount = 0;
+      } else if (gambleAmount > currentScore) {
+        alert("You don't have enough points to gamble that much! Gamble amount will default to the amount of points you currently have!");
+        return gambleAmount = currentScore;
+      }
+      gambleModal.remove();
+      displayQuestion(event, question, correctAnswer, shuffledAnswers, gambleAmount, points);
+    });
+  } else {
+    displayQuestion(event, question, correctAnswer, shuffledAnswers, gambleAmount, points);
+  }
+}
+
+function displayQuestion(event, question, correctAnswer, shuffledAnswers, gambleAmount, points){
   DOMSelector.container.insertAdjacentHTML("beforeend", 
     `<div class="question-modal">
-    <h2>${category}: ${points} Points</h2>
-    <p>${question}</p>
-    <div class="answer-options">
-      <button class="answer-btn" data-correct="true">${correctAnswer}</button>
-      <button class="answer-btn" data-correct="false">${incorrectAnswers[0]}</button>
-      <button class="answer-btn" data-correct="false">${incorrectAnswers[1]}</button>
-      <button class="answer-btn" data-correct="false">${incorrectAnswers[2]}</button>
-    </div>
-    <button class="close-modal-btn">Close</button>
-  </div>`)
+      <p>${question}</p>
+      <div class="answer-options">
+        ${shuffledAnswers
+          .map(
+            (answer, index) => 
+              `<button class="answer-btn" data-correct="${answer === correctAnswer}" data-answer="${answer}">${answer}</button>`
+          )
+          .join("")}
+      </div>
+      <button class="close-modal-btn">Close</button>
+    </div>`
+  );
 
-  const questionModal = DOMSelector.questionModal;
-  const closeModalBtn = DOMSelector.closeModalBtn;
-  const answerBtn = DOMSelector.answerBtns;
+  const questionBtns = document.querySelectorAll(".question-btn");
+  const questionModal = document.querySelector(".question-modal");
+  const closeModalBtn = document.querySelector(".close-modal-btn");
+  const answerBtns = questionModal.querySelectorAll(".answer-btn");
 
-  closeModalBtn.addEventListener("click", function(){
+  closeModalBtn.addEventListener("click", function() {
     questionModal.remove();
+    event.target.dataset.chosen = "false";
+    questionBtns.forEach((btn) => btn.disabled = false);
   });
 
-  answerBtn.forEach((button) => button.addEventListener("click", function(){
-    if (button.dataset.correct === "true"){
+  answerBtns.forEach((button) => button.addEventListener("click", function() {
+    const isCorrect = button.dataset.correct === "true";
+    if (isCorrect && gambleAmount > 0) {
+      currentScore += gambleAmount * 2;
+      alert(`Correct! Your score has increased by ${gambleAmount * 2} points`);
+    }else if (!isCorrect && gambleAmount > 0){
+      currentScore -= gambleAmount;
+      alert(`Incorrect! Your score has decreased by ${gambleAmount} points`);
+    }else if (isCorrect){
       currentScore += points;
-      DOMSelector.score.innerHTML = `Score: ${currentScore}`;
-      alert("Correct! Your score has increased by " + points + " points")
-    } else {
+      alert(`Correct! Your score has increased by ${points} points`);
+    }else {
       currentScore -= points;
-      DOMSelector.score.innerHTML = `Score: ${currentScore}`;
-      alert("Incorrect! Your score has decreased by " + points + " points")
+      alert(`Incorrect! Your score has decreased by ${points} points`);
     }
     questionModal.remove();
-  }))
-};
+    questionBtns.forEach((btn) => btn.disabled = false);
+    DOMSelector.score.innerHTML = `Score: ${currentScore}`;
+  }));
+}
 
 function getQuestionData(category, index){
   const categories = game;
@@ -136,7 +202,7 @@ function start(){
 
     DOMSelector.container.innerHTML = "";
     DOMSelector.startBtn.remove();
-    DOMSelector.container.insertAdjacentHTML("beforeend",
+    document.querySelector("#app").insertAdjacentHTML("beforeend",
       `<h1 class="score"></h1>`
     )
     DOMSelector.score = document.querySelector(".score")
