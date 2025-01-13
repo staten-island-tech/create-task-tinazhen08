@@ -24,38 +24,6 @@ const books = {
       },
       {
         type: "multiple",
-        difficulty: "easy",
-        category: "Entertainment: Books",
-        question: "Which is NOT a book in the Harry Potter Series?",
-        correct_answer: "The House Elf",
-        incorrect_answers: [
-          "The Chamber of Secrets",
-          "The Prisoner of Azkaban",
-          "The Deathly Hallows",
-        ],
-      },
-      {
-        type: "multiple",
-        difficulty: "easy",
-        category: "Entertainment: Books",
-        question: "What is the name of Sherlock Holmes&#039;s brother?",
-        correct_answer: "Mycroft Holmes",
-        incorrect_answers: [
-          "Mederi Holmes",
-          "Martin Holmes",
-          "Herbie Hancock Holmes",
-        ],
-      },
-      {
-        type: "multiple",
-        difficulty: "easy",
-        category: "Entertainment: Books",
-        question: "How many Harry Potter books are there?",
-        correct_answer: "7",
-        incorrect_answers: ["8", "5", "6"],
-      },
-      {
-        type: "multiple",
         difficulty: "medium",
         category: "Entertainment: Books",
         question: "How many books are in the Chronicles of Narnia series?",
@@ -76,40 +44,6 @@ const books = {
       },
       {
         type: "multiple",
-        difficulty: "medium",
-        category: "Entertainment: Books",
-        question:
-          "What was the name of the Mysterious Island, in Jules Verne&#039;s &quot;The Mysterious Island&quot;?",
-        correct_answer: "Lincoln Island",
-        incorrect_answers: [
-          "Vulcania Island",
-          "Prometheus Island",
-          "Neptune Island",
-        ],
-      },
-      {
-        type: "multiple",
-        difficulty: "medium",
-        category: "Entertainment: Books",
-        question:
-          "Which American author was also a budding travel writer and wrote of his adventures with his dog Charley?",
-        correct_answer: "John Steinbeck",
-        incorrect_answers: [
-          "F. Scott Fitzgerald",
-          "Ernest Hemingway",
-          "William Faulkner",
-        ],
-      },
-      {
-        type: "multiple",
-        difficulty: "medium",
-        category: "Entertainment: Books",
-        question: "What position does Harry Potter play in Quidditch?",
-        correct_answer: "Seeker",
-        incorrect_answers: ["Beater", "Chaser", "Keeper"],
-      },
-      {
-        type: "multiple",
         difficulty: "hard",
         category: "Entertainment: Books",
         question:
@@ -125,37 +59,6 @@ const books = {
           "Which fictional English county was the setting for Thomas Hardy&#039;s novels?",
         correct_answer: "Wessex",
         incorrect_answers: ["Barsetshire", "Fulchester", "Ambridge"],
-      },
-      {
-        type: "multiple",
-        difficulty: "hard",
-        category: "Entertainment: Books",
-        question:
-          "In the Magic: The Gathering universe,  the Antiquities, Ice Age, and Alliances expansions take place on which continent?",
-        correct_answer: "Terisiare",
-        incorrect_answers: ["Aerona", "Shiv", "Jamuraa"],
-      },
-      {
-        type: "multiple",
-        difficulty: "hard",
-        category: "Entertainment: Books",
-        question:
-          "In Margaret Atwood&#039;s &quot;The Handmaid&#039;s Tale&quot;, what is Offred&#039;s real name is implied to be?",
-        correct_answer: "June",
-        incorrect_answers: ["August", "April", "May"],
-      },
-      {
-        type: "multiple",
-        difficulty: "hard",
-        category: "Entertainment: Books",
-        question:
-          "In the book series &quot;Odd Thomas&quot;, Danny Jessup has what genetic disease? ",
-        correct_answer: " Osteogenesis Imperfecta",
-        incorrect_answers: [
-          "Spinocerebellar ataxia",
-          "Adrenoleukodystrophy",
-          "Cystic Fibrosis",
-        ],
       },
     ],
   };
