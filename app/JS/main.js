@@ -1,16 +1,15 @@
 import "../css/style.css";
-import {
-  generalKnowledge,
-  books,
-  film,
-  music,
-  videoGames,
-  computers,
-  mythology,
-  television,
-  boardGames,
-  mathematics,
-} from "./trivia";
+import { generalKnowledge } from "./trivia/gk";
+import { books } from "./trivia/book";
+import { boardGames } from "./trivia/bg";
+import { computers } from "./trivia/computer";
+import { film } from "./trivia/film";
+import { generalKnowledge } from "./trivia/gk";
+import { mathematics } from "./trivia/math";
+import { music } from "./trivia/music";
+import { mythology } from "./trivia/myth";
+import { television } from "./trivia/tele";
+import { videoGames } from "./trivia/vg"; 
 import { DOMSelector } from "./dom";
 
 const listAPI = [
