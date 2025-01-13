@@ -8,6 +8,8 @@ import {
   mythology,
   television,
   videoGames,
+  boardGames,
+  film
 } from "./trivia";
 import { DOMSelector } from "./dom";
 
@@ -20,6 +22,8 @@ const listArray = [
   mythology,
   television,
   mathematics,
+  boardGames, 
+  film
 ];
 
 function shuffle(array) {
