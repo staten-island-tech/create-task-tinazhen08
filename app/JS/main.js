@@ -238,13 +238,17 @@ function displayQuestion(
         alert(`Correct! Your score has increased by ${wagerAmount * 2} points`);
       } else if (!isCorrect && wagerAmount > 0) {
         currentScore -= wagerAmount;
-        alert(`Incorrect! The correct answer was "${correctAnswer}." Your score has decreased by ${wagerAmount} points`);
+        alert(
+          `Incorrect! The correct answer was "${correctAnswer}". Your score has decreased by ${wagerAmount} points`
+        );
       } else if (isCorrect) {
         currentScore += points;
         alert(`Correct! Your score has increased by ${points} points`);
       } else {
         currentScore -= points;
-        alert(`Incorrect! The correct answer was "${correctAnswer}." Your score has decreased by ${points} points`);
+        alert(
+          `Incorrect! The correct answer was "${correctAnswer}". Your score has decreased by ${points} points`
+        );
       }
       questionModal.remove();
       questionBtns.forEach((btn) => (btn.disabled = false));
