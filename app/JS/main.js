@@ -1,8 +1,17 @@
 import "../css/style.css";
-import {books, computers, generalKnowledge, mathematics, music, mythology, television, videoGames} from "./trivia"
+import {
+  books,
+  computers,
+  generalKnowledge,
+  mathematics,
+  music,
+  mythology,
+  television,
+  videoGames,
+} from "./trivia";
 import { DOMSelector } from "./dom";
 
-const listAPI = [
+const listArray = [
   generalKnowledge,
   books,
   music,
@@ -19,7 +28,7 @@ function shuffle(array) {
     [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
-};
+}
 
 function getCategories(x) {
   const c = shuffle(x);
@@ -30,9 +39,9 @@ function getCategories(x) {
   const C5 = c[4];
   const C6 = c[5];
   return { C1, C2, C3, C4, C5, C6 };
-};
+}
 
-const game = getCategories(listAPI);
+const game = getCategories(listArray);
 let currentScore = 0;
 
 function displayCategories() {
@@ -72,7 +81,7 @@ function displayCategories() {
       questionBtns[i].classList.add("daily-double");
     }
   }
-};
+}
 
 function showQuestion(event) {
   const category = event.target.dataset.category;
@@ -142,32 +151,31 @@ function showQuestion(event) {
         wagerAmount,
         points
       );
-    }
-    else {
-    wagerBtn.addEventListener("click", async () => {
-      console.log("Wager button clicked");
-      let wagerAmount = Number(document.querySelector("#wager-amount").value);
-      if (isNaN(wagerAmount) || wagerAmount < 0) {
-        alert("Please enter a valid positive number to wager.");
-        return;
-      }
+    } else {
+      wagerBtn.addEventListener("click", async () => {
+        console.log("Wager button clicked");
+        let wagerAmount = Number(document.querySelector("#wager-amount").value);
+        if (isNaN(wagerAmount) || wagerAmount < 0) {
+          alert("Please enter a valid positive number to wager.");
+          return;
+        }
 
-      if (wagerAmount > currentScore) {
-        wagerAmount = currentScore;
-        alert(
-          "You do not have enough points to wager that much! Wager amount will default to your current score."
+        if (wagerAmount > currentScore) {
+          wagerAmount = currentScore;
+          alert(
+            "You do not have enough points to wager that much! Wager amount will default to your current score."
+          );
+        }
+        wagerModal.remove();
+        displayQuestion(
+          event,
+          question,
+          correctAnswer,
+          shuffledAnswers,
+          wagerAmount,
+          points
         );
-      }
-      wagerModal.remove();
-      displayQuestion(
-        event,
-        question,
-        correctAnswer,
-        shuffledAnswers,
-        wagerAmount,
-        points
-      );
-    });
+      });
     }
   } else {
     displayQuestion(
@@ -179,7 +187,7 @@ function showQuestion(event) {
       points
     );
   }
-};
+}
 
 function displayQuestion(
   event,
@@ -239,7 +247,7 @@ function displayQuestion(
       DOMSelector.score.innerHTML = `Score: ${currentScore}`;
     })
   );
-};
+}
 
 function getQuestionData(category, index) {
   const categories = game;
@@ -252,7 +260,7 @@ function getQuestionData(category, index) {
     }
   }
   return questionData;
-};
+}
 
 function start() {
   DOMSelector.startBtn.addEventListener("click", function (event) {
@@ -268,6 +276,6 @@ function start() {
 
     displayCategories();
   });
-};
+}
 
 start();
