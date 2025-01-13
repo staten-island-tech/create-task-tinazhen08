@@ -7,6 +7,175 @@ body,
   margin: 0;
 }
 
-button {
-  font-size: 2rem;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+
+.start{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 6rem;
+  background-color: #457b9d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+}
+
+.start:hover{
+  background-color: #1d3557;;
+}
+
+.score {
+  font-size: 2.4rem;
+  margin: 2rem auto;
+}
+
+.container {
+  width: 80%;
+  margin-top: 2rem;
+}
+
+.category {
+  display: inline-block;
+  width: 16.66%; 
+  vertical-align: top;
+  text-align: center;
+  margin-bottom: 2rem;
+  height: 35rem;
+}
+
+.category h2 {
+  background-color: #1d3557;
+  color: white;
+  padding: 1rem;
+  margin: 0;
+  font-size: 1.8rem;
+  height: 7rem;
+}
+
+.question-grid {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  margin-top: 1rem;
+}
+
+.question-btn {
+  background-color: #457b9d;
+  color: white;
+  border: none;
+  padding: 1.5rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 80%; 
+  margin-bottom: 1rem; 
+}
+
+.question-btn:hover {
+  background-color: #1d3557;
+}
+
+.question-btn:disabled {
+  background-color: #a8dadc;
+}
+
+.question-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px black;
+  z-index: 1000;
+  width: 80%;
+  max-width: 60rem;
+  text-align: center;
+}
+
+.question-modal p {
+  font-size: 2rem
+}
+
+.answer-options {
+  margin-top: 2rem;
+}
+
+.answer-btn {
+  background-color: #457b9d;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  margin: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.answer-btn:hover {
+  background-color: #1d3557;
+}
+
+.close-modal-btn {
+  background-color: #457b9d;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.close-modal-btn:hover {
+  background-color: #1d3557;
+}
+
+.wager-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px black;
+  z-index: 1000;
+  width: 80%;
+  max-width: 40rem;
+  text-align: center;
+}
+
+.wager-modal input {
+  font-size: 1.8rem;
+  padding: 1rem;
+  width: 10rem;
+  margin-top: 1rem;
+}
+
+.wager-modal button {
+  background-color: #457b9d;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.wager-modal button:hover {
+  background-color: #1d3557;
 }

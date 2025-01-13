@@ -60,7 +60,7 @@ function displayCategories() {
     DOMSelector.container.insertAdjacentHTML(
       "beforeend",
       `<div class="category">
-        <h3>${category.results[0].category}</h3>
+        <h2>${category.results[0].category}</h2>
         <div class="question-grid">
           ${points
             .map(
