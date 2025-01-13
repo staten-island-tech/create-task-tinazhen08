@@ -32,7 +32,7 @@ function shuffle(array) {
     [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
-}
+};
 
 function getCategories(x) {
   const c = shuffle(x);
@@ -43,7 +43,7 @@ function getCategories(x) {
   const C5 = c[4];
   const C6 = c[5];
   return { C1, C2, C3, C4, C5, C6 };
-}
+};
 
 const game = getCategories(listAPI);
 let currentScore = 0;
@@ -85,7 +85,7 @@ function displayCategories() {
       questionBtns[i].classList.add("daily-double");
     }
   }
-}
+};
 
 function showQuestion(event) {
   const category = event.target.dataset.category;
@@ -124,67 +124,82 @@ function showQuestion(event) {
   const allAnswers = [correctAnswer, ...incorrectAnswers];
   const shuffledAnswers = shuffle(allAnswers);
 
-  let gambleAmount = 0;
+  let wagerAmount = 0;
   if (event.target.classList.contains("daily-double")) {
+    alert(
+      "Daily Double question chosen! Enter in the amount of point you would like to wager on the question. Get the answer right and double the amount you wager! Get the question wrong and lose the amount you wager!"
+    );
     DOMSelector.container.insertAdjacentHTML(
       "beforeend",
-      `<div class="gamble-modal">
+      `<div class="wager-modal">
       <h2>Daily Double</h2>
-      <p>How much would you like to gamble?</p>
-      <input type="number" id="gamble-amount" value="0" max="${currentScore}">
-      <button id="gamble-btn">Gamble</button>
+      <p>How much would you like to wager?</p>
+      <input type="number" id="wager-amount" value="0" max="${currentScore}">
+      <button id="wager-btn">Wager</button>
     </div>`
     );
 
-    const gambleBtn = document.querySelector("#gamble-btn");
-    const gambleModal = document.querySelector(".gamble-modal");
-    gambleBtn.addEventListener("click", async () => {
-      console.log("Gamble button clicked");
-      let gambleAmount = Number(document.querySelector("#gamble-amount").value);
-      if (isNaN(gambleAmount) || gambleAmount < 0) {
-        alert("Please enter a valid positive number to gamble.");
-        return;
-      }
-
-      if (currentScore < 0) {
-        alert(
-          "You have a negative amount of points. You are too poor to gamble!"
-        );
-        return (gambleAmount = 0);
-      } else if (gambleAmount > currentScore) {
-        alert(
-          "You don't have enough points to gamble that much! Gamble amount will default to the amount of points you currently have!"
-        );
-        return (gambleAmount = currentScore);
-      }
-      gambleModal.remove();
+    const wagerBtn = document.querySelector("#wager-btn");
+    const wagerModal = document.querySelector(".wager-modal");
+    if (currentScore <= 0) {
+      wagerAmount = 0;
+      alert(
+        "You are too poor to wager points! Wager amount set to 0. You can still win the amount of points the question is worth."
+      );
+      wagerModal.remove();
       displayQuestion(
         event,
         question,
         correctAnswer,
         shuffledAnswers,
-        gambleAmount,
+        wagerAmount,
+        points
+      );
+    }
+    else {
+    wagerBtn.addEventListener("click", async () => {
+      console.log("Wager button clicked");
+      let wagerAmount = Number(document.querySelector("#wager-amount").value);
+      if (isNaN(wagerAmount) || wagerAmount < 0) {
+        alert("Please enter a valid positive number to wager.");
+        return;
+      }
+
+      if (wagerAmount > currentScore) {
+        wagerAmount = currentScore;
+        alert(
+          "You do not have enough points to wager that much! Wager amount will default to your current score."
+        );
+      }
+      wagerModal.remove();
+      displayQuestion(
+        event,
+        question,
+        correctAnswer,
+        shuffledAnswers,
+        wagerAmount,
         points
       );
     });
+    }
   } else {
     displayQuestion(
       event,
       question,
       correctAnswer,
       shuffledAnswers,
-      gambleAmount,
+      wagerAmount,
       points
     );
   }
-}
+};
 
 function displayQuestion(
   event,
   question,
   correctAnswer,
   shuffledAnswers,
-  gambleAmount,
+  wagerAmount,
   points
 ) {
   DOMSelector.container.insertAdjacentHTML(
@@ -219,14 +234,12 @@ function displayQuestion(
   answerBtns.forEach((button) =>
     button.addEventListener("click", function () {
       const isCorrect = button.dataset.correct === "true";
-      if (isCorrect && gambleAmount > 0) {
-        currentScore += gambleAmount * 2;
-        alert(
-          `Correct! Your score has increased by ${gambleAmount * 2} points`
-        );
-      } else if (!isCorrect && gambleAmount > 0) {
-        currentScore -= gambleAmount;
-        alert(`Incorrect! Your score has decreased by ${gambleAmount} points`);
+      if (isCorrect && wagerAmount > 0) {
+        currentScore += wagerAmount * 2;
+        alert(`Correct! Your score has increased by ${wagerAmount * 2} points`);
+      } else if (!isCorrect && wagerAmount > 0) {
+        currentScore -= wagerAmount;
+        alert(`Incorrect! Your score has decreased by ${wagerAmount} points`);
       } else if (isCorrect) {
         currentScore += points;
         alert(`Correct! Your score has increased by ${points} points`);
@@ -239,7 +252,7 @@ function displayQuestion(
       DOMSelector.score.innerHTML = `Score: ${currentScore}`;
     })
   );
-}
+};
 
 function getQuestionData(category, index) {
   const categories = game;
@@ -252,7 +265,7 @@ function getQuestionData(category, index) {
     }
   }
   return questionData;
-}
+};
 
 function start() {
   DOMSelector.startBtn.addEventListener("click", function (event) {
@@ -268,6 +281,6 @@ function start() {
 
     displayCategories();
   });
-}
+};
 
 start();
