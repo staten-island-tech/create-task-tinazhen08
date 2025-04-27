@@ -1,5 +1,6 @@
 import "../css/style.css";
 import {
+  //The categories and questions were taken from an API -> This code was made freely available by Open Trivia DB (https://opentdb.com/api_config.php)
   books,
   computers,
   generalKnowledge,
@@ -11,7 +12,13 @@ import {
   boardGames,
   film,
 } from "./trivia";
-import { DOMSelector } from "./dom";
+
+const DOMSelector = {
+  container: document.querySelector(".container"),
+  startBtn: document.querySelector(".start"),
+  questionGrid: document.querySelector(".question-grid"),
+  questionBtn: document.querySelector(".quesiton-btn"),
+};
 
 const listArray = [
   generalKnowledge,
@@ -27,6 +34,7 @@ const listArray = [
 ];
 
 function shuffle(array) {
+  // Fisher-Yates Shuffle -> This code was made freely available by Wikipedia under JavaScript Implementation (changed very slightly)
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
@@ -35,14 +43,14 @@ function shuffle(array) {
 }
 
 function getCategories(x) {
-  const c = shuffle(x);
-  const C1 = c[0];
-  const C2 = c[1];
-  const C3 = c[2];
-  const C4 = c[3];
-  const C5 = c[4];
-  const C6 = c[5];
-  return { C1, C2, C3, C4, C5, C6 };
+  const shuffled = shuffle(x);
+  const categories = {};
+
+  for (let i = 0; i < 6; i++) {
+    categories[`${i + 1}`] = shuffled[i];
+  }
+
+  return categories;
 }
 
 const game = getCategories(listArray);
@@ -53,9 +61,7 @@ function displayCategories() {
   DOMSelector.container.innerHTML = "";
   DOMSelector.score.innerHTML = `Score: ${currentScore}`;
 
-  for (let i = 0; i < Object.keys(categories).length; i++) {
-    const categoriesKey = Object.keys(categories)[i];
-    const category = categories[categoriesKey];
+  for (const [key, category] of Object.entries(categories)) {
     const points = [100, 200, 300, 400, 500, 600];
     DOMSelector.container.insertAdjacentHTML(
       "beforeend",
@@ -65,7 +71,11 @@ function displayCategories() {
           ${points
             .map(
               (point, index) =>
-                `<button class="question-btn" data-category="${category.results[0].category}" data-points="${point}" data-index="${index}" data-chosen="false">${point}</button>`
+                `<button class="question-btn" 
+              data-category="${category.results[0].category}" 
+              data-points="${point}" 
+              data-index="${index}" 
+              data-chosen="false">${point}</button>`
             )
             .join("")}
         </div>
@@ -208,7 +218,7 @@ function displayQuestion(
       <div class="answer-options">
         ${shuffledAnswers
           .map(
-            (answer, index) =>
+            (answer) =>
               `<button class="answer-btn" data-correct="${
                 answer === correctAnswer
               }" data-answer="${answer}">${answer}</button>`
@@ -260,10 +270,9 @@ function displayQuestion(
 function getQuestionData(category, index) {
   const categories = game;
   let questionData = null;
-  for (let i = 0; i < Object.keys(categories).length; i++) {
-    const categoryKey = Object.keys(categories)[i];
-    if (categories[categoryKey].results[0].category === category) {
-      questionData = categories[categoryKey].results[index];
+  for (const [categoryKey, categoryData] of Object.entries(categories)) {
+    if (categoryData.results[0].category === category) {
+      questionData = categoryData.results[index];
       break;
     }
   }
