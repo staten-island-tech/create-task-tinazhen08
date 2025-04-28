@@ -634,7 +634,7 @@ const film = {
   ],
 };
 
-export {
+export { //The categories and questions were taken from an API -> This code was made freely available by Open Trivia DB (https://opentdb.com/api_config.php)
   books,
   computers,
   generalKnowledge,

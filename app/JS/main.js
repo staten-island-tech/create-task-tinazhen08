@@ -33,8 +33,7 @@ const listArray = [
   film,
 ];
 
-function shuffle(array) {
-  // Fisher-Yates Shuffle -> This code was made freely available by Wikipedia under JavaScript Implementation (changed very slightly)
+function shuffle(array) { //Fisher-Yates Shuffle (changed slightly)-> This code was made freely available by Wikipedia under JavaScript Implementation (https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
